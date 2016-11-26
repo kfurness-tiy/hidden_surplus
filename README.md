@@ -1,6 +1,6 @@
 ## Synopsis
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+Hidden surplus is a way to rethink donations and charity contributions. Individuals can choose to sacrafice uneeded purchases and put that money to a greater cause. Hidden Suplus keeps track of the aggregate contributions and shows that together, small donations can make a big difference.
 
 ## Code Example
 
@@ -8,7 +8,7 @@ Show what the library does as concisely as possible, developers should be able t
 
 ## Motivation
 
-I want to create a way for individuals to think of ways they can use their money for a better cause without affecting their finances. If someone gives up one thing a year that they do not need but that they regularly consume and put that towards a greater cause, they can do a world of good. 
+I want to create a way for individuals to think of ways they can use their money for a better cause without affecting their finances. If someone gives up one thing a year that they do not need but that they regularly consume and put that towards a greater cause, they can do a world of good.
 
 ## Installation
 

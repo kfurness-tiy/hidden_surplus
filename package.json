@@ -1,7 +1,7 @@
 {
   "name": "hidden_surplus",
   "version": "1.0.0",
-  "description": "At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)",
+  "description": "Hidden surplus is a way to rethink donations and charity contributions. Individuals can choose to sacrafice uneeded purchases and put that money to a greater cause. Hidden Suplus keeps track of the aggregate contributions and shows that together, small donations can make a big difference.",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
