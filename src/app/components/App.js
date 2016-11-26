@@ -3,7 +3,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Match, Miss } from 'react-router';
 
-import Nav from "./Nav.js";
+import Nav from "./Nav";
+import Jumbotron from "./Jumbotron";
 
 export default class App extends React.Component {
 
@@ -11,6 +12,7 @@ export default class App extends React.Component {
     return (
         <div>
           <Nav />
+          <Jumbotron />
         </div>
     )
   }
