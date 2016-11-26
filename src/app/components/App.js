@@ -3,9 +3,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Match, Miss } from 'react-router';
 
-import Nav from './Nav';
+import Contributions from './Contributions';
+import DoGood from './DoGood';
 import Jumbotron from './Jumbotron';
 import Main from './Main';
+import Nav from './Nav';
 
 export default class App extends React.Component {
 
@@ -15,6 +17,8 @@ export default class App extends React.Component {
           <Nav />
           <Jumbotron />
           <Main />
+          <Contributions />
+          <DoGood />
         </div>
     )
   }
