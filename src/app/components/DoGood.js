@@ -4,6 +4,7 @@ import React from 'react';
 
 import DoGoodForm from './DoGoodForm';
 import Login from './Login'
+import Register from './Register'
 
 export default class DoGood extends React.Component {
   render () {
@@ -11,6 +12,7 @@ export default class DoGood extends React.Component {
       <div>
         <div>
           <Login />
+          <Register />
         </div>
         <div className="form">
           <h2>Do Good</h2>
