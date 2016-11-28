@@ -1,6 +1,17 @@
 'use strict';
 
 import React from 'react';
+import { fbRef, fbDoGood } from './constants.js';
+
+function addDoGood (obj) {
+  console.log("obj",obj);
+  let doGood = obj;
+  const doGoodId = fbDoGood.push().key;
+
+  let updates = {};
+  updates['doGood/' + doGoodId] = doGood;
+  fbRef.update(updates);
+  }
 
 export default class DoGoodForm extends React.Component {
 
@@ -11,16 +22,8 @@ export default class DoGoodForm extends React.Component {
       donateTo: document.getElementById('donateTo').value,
       gaveUp: document.getElementById('gaveUp').value
     }
-    // let name = document.getElementById('name').value;
-    // let amount = document.getElementById('amount').value;
-    // let donateTo = document.getElementById('donateTo').value;
-    // let gaveUp = document.getElementById('gaveUp').value;
-    //
-    // console.log({name});
-    // console.log({amount});
-    // console.log({donateTo});
-    // console.log({gaveUp});
     console.log(doGood);
+    addDoGood(doGood);
   }
 
   render () {
