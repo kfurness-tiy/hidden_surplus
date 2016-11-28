@@ -22,3 +22,5 @@ export function saveUser (user) {
     })
     .then(() => user)
 }
+
+// Authentication setup credit goes to Tyler McGinnis https://github.com/tylermcginnis/react-router-firebase-auth

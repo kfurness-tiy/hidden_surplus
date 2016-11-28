@@ -9,3 +9,5 @@ firebase.initializeApp(config);
 
 export const ref = firebase.database().ref()
 export const firebaseAuth = firebase.auth
+
+// Authentication setup credit goes to Tyler McGinnis https://github.com/tylermcginnis/react-router-firebase-auth
