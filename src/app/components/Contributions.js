@@ -21,7 +21,7 @@ export default class Contributions extends React.Component {
 };
 
   componentDidMount() {
-  fbRef.on("child_added", (snapshot) => {
+  fbDoGood.on("child_added", (snapshot) => {
     updateToDo(snapshot.val(), snapshot.key);
     this.setState({
       doGood: doGood,
@@ -30,12 +30,17 @@ export default class Contributions extends React.Component {
 }
 
   render () {
-    console.log("test",this.state.doGood);
     return (
       <div>
         <h2>Collective Contributions</h2>
         <p>Small acts can make a big difference. Just look at all the good being done by people donating their hidden surplus. Way to make the world a better place!</p>
-        <ContTotals doGood={this.state.doGood} />
+        <h3>Total</h3>
+        {this.state.doGood.map((c,i,a) => {
+          return (
+            <ContTotals doGood={c.amount} />
+          )
+        })}
+
       </div>
     )
   }
