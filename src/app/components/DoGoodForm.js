@@ -3,6 +3,26 @@
 import React from 'react';
 
 export default class DoGoodForm extends React.Component {
+
+  getValues() {
+    let doGood = {
+      name: document.getElementById('name').value,
+      amount: document.getElementById('amount').value,
+      donateTo: document.getElementById('donateTo').value,
+      gaveUp: document.getElementById('gaveUp').value
+    }
+    // let name = document.getElementById('name').value;
+    // let amount = document.getElementById('amount').value;
+    // let donateTo = document.getElementById('donateTo').value;
+    // let gaveUp = document.getElementById('gaveUp').value;
+    //
+    // console.log({name});
+    // console.log({amount});
+    // console.log({donateTo});
+    // console.log({gaveUp});
+    console.log(doGood);
+  }
+
   render () {
     return (
       <form>
@@ -18,7 +38,7 @@ export default class DoGoodForm extends React.Component {
         </div>
         <div>
           <label htmlFor="donateTo">Donated to:
-            <input type="text" id="donatedTo" />
+            <input type="text" id="donateTo" />
           </label>
         </div>
         <div>
@@ -32,7 +52,7 @@ export default class DoGoodForm extends React.Component {
             <input type="checkbox" id="twitter" /> Twitter
           </label>
         </div>
-        <button type="submit">Submit</button>
+        <button onClick={this.getValues.bind(this)} type="submit">Submit</button>
       </form>
     )
   }
