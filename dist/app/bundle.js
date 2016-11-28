@@ -22030,19 +22030,19 @@
 	
 	var _Contributions2 = _interopRequireDefault(_Contributions);
 	
-	var _DoGood = __webpack_require__(/*! ./DoGood */ 235);
+	var _DoGood = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./DoGood\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var _DoGood2 = _interopRequireDefault(_DoGood);
 	
-	var _Jumbotron = __webpack_require__(/*! ./Jumbotron */ 237);
+	var _Jumbotron = __webpack_require__(/*! ./Jumbotron */ 236);
 	
 	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
 	
-	var _Main = __webpack_require__(/*! ./Main */ 243);
+	var _Main = __webpack_require__(/*! ./Main */ 242);
 	
 	var _Main2 = _interopRequireDefault(_Main);
 	
-	var _Nav = __webpack_require__(/*! ./Nav */ 248);
+	var _Nav = __webpack_require__(/*! ./Nav */ 247);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
@@ -27215,178 +27215,8 @@
 	exports.default = Contributions;
 
 /***/ },
-/* 235 */
-/*!**************************************!*\
-  !*** ./src/app/components/DoGood.js ***!
-  \**************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _DoGoodForm = __webpack_require__(/*! ./DoGoodForm */ 236);
-	
-	var _DoGoodForm2 = _interopRequireDefault(_DoGoodForm);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var DoGood = function (_React$Component) {
-	  _inherits(DoGood, _React$Component);
-	
-	  function DoGood() {
-	    _classCallCheck(this, DoGood);
-	
-	    return _possibleConstructorReturn(this, (DoGood.__proto__ || Object.getPrototypeOf(DoGood)).apply(this, arguments));
-	  }
-	
-	  _createClass(DoGood, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h2',
-	          null,
-	          'Do Good'
-	        ),
-	        _react2.default.createElement(_DoGoodForm2.default, null)
-	      );
-	    }
-	  }]);
-	
-	  return DoGood;
-	}(_react2.default.Component);
-	
-	exports.default = DoGood;
-
-/***/ },
+/* 235 */,
 /* 236 */
-/*!******************************************!*\
-  !*** ./src/app/components/DoGoodForm.js ***!
-  \******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var DoGoodForm = function (_React$Component) {
-	  _inherits(DoGoodForm, _React$Component);
-	
-	  function DoGoodForm() {
-	    _classCallCheck(this, DoGoodForm);
-	
-	    return _possibleConstructorReturn(this, (DoGoodForm.__proto__ || Object.getPrototypeOf(DoGoodForm)).apply(this, arguments));
-	  }
-	
-	  _createClass(DoGoodForm, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'form',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'label',
-	            { htmlFor: 'name' },
-	            'Name:',
-	            _react2.default.createElement('input', { type: 'text', id: 'name' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'label',
-	            { htmlFor: 'amount' },
-	            'Amount Donated:',
-	            _react2.default.createElement('input', { type: 'text', id: 'amount' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'label',
-	            { htmlFor: 'donateTo' },
-	            'Donated to:',
-	            _react2.default.createElement('input', { type: 'text', id: 'donatedTo' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'label',
-	            { htmlFor: 'gaveUp' },
-	            'What did you give up to donate?',
-	            _react2.default.createElement('textarea', { type: 'text', id: 'gaveUp' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'label',
-	            { htmlFor: 'socialMedia' },
-	            'Share on:',
-	            _react2.default.createElement('input', { type: 'checkbox', id: 'facebook' }),
-	            ' Facebook ',
-	            _react2.default.createElement('br', null),
-	            _react2.default.createElement('input', { type: 'checkbox', id: 'twitter' }),
-	            ' Twitter'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'button',
-	          { type: 'submit' },
-	          'Submit'
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return DoGoodForm;
-	}(_react2.default.Component);
-	
-	exports.default = DoGoodForm;
-
-/***/ },
-/* 237 */
 /*!*****************************************!*\
   !*** ./src/app/components/Jumbotron.js ***!
   \*****************************************/
@@ -27404,7 +27234,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _Jumbotron = __webpack_require__(/*! ./_Jumbotron.sass */ 238);
+	var _Jumbotron = __webpack_require__(/*! ./_Jumbotron.sass */ 237);
 	
 	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
 	
@@ -27446,7 +27276,7 @@
 	exports.default = Jumbotron;
 
 /***/ },
-/* 238 */
+/* 237 */
 /*!********************************************!*\
   !*** ./src/app/components/_Jumbotron.sass ***!
   \********************************************/
@@ -27455,10 +27285,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./_Jumbotron.sass */ 239);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./_Jumbotron.sass */ 238);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 242)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 241)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27475,24 +27305,24 @@
 	}
 
 /***/ },
-/* 239 */
+/* 238 */
 /*!***************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/_Jumbotron.sass ***!
   \***************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 240)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 239)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".jumbo {\n  background-image: url(" + __webpack_require__(/*! ../img/jumbotron_placeholder.png */ 241) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  height: 500px; }\n  .jumbo h2 {\n    color: white; }\n", ""]);
+	exports.push([module.id, ".jumbo {\n  background-image: url(" + __webpack_require__(/*! ../img/jumbotron_placeholder.png */ 240) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  height: 500px; }\n  .jumbo h2 {\n    color: white; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 240 */
+/* 239 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -27551,7 +27381,7 @@
 
 
 /***/ },
-/* 241 */
+/* 240 */
 /*!***********************************************!*\
   !*** ./src/app/img/jumbotron_placeholder.png ***!
   \***********************************************/
@@ -27560,7 +27390,7 @@
 	module.exports = __webpack_require__.p + "src/app/img/jumbotron_placeholder.png?d0394fa18b";
 
 /***/ },
-/* 242 */
+/* 241 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -27815,7 +27645,7 @@
 
 
 /***/ },
-/* 243 */
+/* 242 */
 /*!************************************!*\
   !*** ./src/app/components/Main.js ***!
   \************************************/
@@ -27833,15 +27663,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _About = __webpack_require__(/*! ./About */ 244);
+	var _About = __webpack_require__(/*! ./About */ 243);
 	
 	var _About2 = _interopRequireDefault(_About);
 	
-	var _StartDoingGood = __webpack_require__(/*! ./StartDoingGood */ 246);
+	var _StartDoingGood = __webpack_require__(/*! ./StartDoingGood */ 245);
 	
 	var _StartDoingGood2 = _interopRequireDefault(_StartDoingGood);
 	
-	var _WhereToGive = __webpack_require__(/*! ./WhereToGive */ 247);
+	var _WhereToGive = __webpack_require__(/*! ./WhereToGive */ 246);
 	
 	var _WhereToGive2 = _interopRequireDefault(_WhereToGive);
 	
@@ -27881,7 +27711,7 @@
 	exports.default = Main;
 
 /***/ },
-/* 244 */
+/* 243 */
 /*!*************************************!*\
   !*** ./src/app/components/About.js ***!
   \*************************************/
@@ -27899,7 +27729,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _WhatToGive = __webpack_require__(/*! ./WhatToGive */ 245);
+	var _WhatToGive = __webpack_require__(/*! ./WhatToGive */ 244);
 	
 	var _WhatToGive2 = _interopRequireDefault(_WhatToGive);
 	
@@ -27947,7 +27777,7 @@
 	exports.default = About;
 
 /***/ },
-/* 245 */
+/* 244 */
 /*!******************************************!*\
   !*** ./src/app/components/WhatToGive.js ***!
   \******************************************/
@@ -28003,7 +27833,7 @@
 	exports.default = WhatToGive;
 
 /***/ },
-/* 246 */
+/* 245 */
 /*!**********************************************!*\
   !*** ./src/app/components/StartDoingGood.js ***!
   \**********************************************/
@@ -28064,7 +27894,7 @@
 	exports.default = StartDoingGood;
 
 /***/ },
-/* 247 */
+/* 246 */
 /*!*******************************************!*\
   !*** ./src/app/components/WhereToGive.js ***!
   \*******************************************/
@@ -28125,7 +27955,7 @@
 	exports.default = WhereToGive;
 
 /***/ },
-/* 248 */
+/* 247 */
 /*!***********************************!*\
   !*** ./src/app/components/Nav.js ***!
   \***********************************/

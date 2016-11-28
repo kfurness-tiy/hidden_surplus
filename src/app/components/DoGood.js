@@ -6,7 +6,31 @@ import DoGoodForm from './DoGoodForm';
 import Login from './Login'
 import Register from './Register'
 
+import { firebaseAuth } from './constants'
+
 export default class DoGood extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      authed: false,
+      loading: true
+    }
+  };
+  componentDidMount () {
+    this.removeListener = firebaseAuth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authed: true,
+          loading: false,
+        })
+      } else {
+        this.setState({
+          loading: false
+        })
+      }
+    })
+  }
+
   render () {
     return (
       <div>
