@@ -1,3 +1,5 @@
+'use strict';
+
 import firebase from 'firebase'
 
 var config = {

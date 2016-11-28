@@ -31,22 +31,22 @@ export default class DoGoodForm extends React.Component {
       <form>
         <div>
           <label htmlFor="name">Name:
-            <input type="text" id="name" />
+            <input type="text" id="name" placeholder="Joe" />
           </label>
         </div>
         <div>
-          <label htmlFor="amount">Amount Donated:
-            <input type="text" id="amount" />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="donateTo">Donated to:
-            <input type="text" id="donateTo" />
+          <label htmlFor="amount">Amount Donated: $
+            <input type="text" id="amount" placeholder="5" />
           </label>
         </div>
         <div>
           <label htmlFor="gaveUp">What did you give up to donate?
-            <textarea type="text" id="gaveUp" />
+            <input type="text" id="gaveUp" placeholder="coffee" />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="donateTo">Donated to:
+            <input type="text" id="donateTo" placeholder="Food Bank"/>
           </label>
         </div>
         <div>
