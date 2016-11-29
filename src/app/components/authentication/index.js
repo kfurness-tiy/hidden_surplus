@@ -67,6 +67,9 @@ export default class Auth extends Component {
                 </div>
                 <ul className="nav navbar-nav pull-right">
                   <li>
+                    <Link to="/" className="navbar-brand">Home</Link>
+                  </li>
+                  <li>
                     <Link to="/dashboard" className="navbar-brand">Dashboard</Link>
                   </li>
                   <li>
@@ -89,6 +92,7 @@ export default class Auth extends Component {
             </nav>
             <div className="container">
               <div className="row">
+                <Match pattern='/' exactly component={Home} />
                 <MatchWhenUnauthed authed={this.state.authed} pattern='/login' component={Login} />
                 <MatchWhenUnauthed authed={this.state.authed} pattern='/register' component={Register} />
                 <MatchWhenAuthed authed={this.state.authed} pattern='/dashboard' component={Dashboard} />
