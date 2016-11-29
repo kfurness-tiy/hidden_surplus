@@ -2,8 +2,6 @@
 
 import React from 'react';
 
-import ContTotals from './ContTotals';
-
 import { fbRef, fbDoGood } from './constants';
 
 let doGood = [];
@@ -40,7 +38,7 @@ export default class Contributions extends React.Component {
         <h2>Collective Contributions</h2>
         <p>Small acts can make a big difference. Just look at all the good being done by people donating their hidden surplus. Way to make the world a better place!</p>
         <h3>Total</h3>
-        <h1>{total}</h1>
+        <h1>${total}</h1>
 
       </div>
     )
