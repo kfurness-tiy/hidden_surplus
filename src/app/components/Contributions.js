@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-import ContTotals from './ContTotals';
 
 import { fbRef, fbDoGood } from './constants';
 
