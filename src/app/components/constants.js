@@ -1,3 +1,5 @@
+'use strict';
+
 import firebase from 'firebase'
 
 var config = {
@@ -7,7 +9,8 @@ var config = {
   };
 firebase.initializeApp(config);
 
-export const ref = firebase.database().ref()
-export const firebaseAuth = firebase.auth
+export const fbRef = firebase.database().ref();
+export const fbDoGood = fbRef.child('doGood');
+export const firebaseAuth = firebase.auth;
 
 // Authentication setup credit goes to Tyler McGinnis https://github.com/tylermcginnis/react-router-firebase-auth

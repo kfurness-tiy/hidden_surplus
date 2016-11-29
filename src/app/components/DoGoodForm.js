@@ -1,29 +1,52 @@
 'use strict';
 
 import React from 'react';
+import { fbRef, fbDoGood } from './constants.js';
+
+function addDoGood (obj) {
+  console.log("obj",obj);
+  let doGood = obj;
+  const doGoodId = fbDoGood.push().key;
+
+  let updates = {};
+  updates['doGood/' + doGoodId] = doGood;
+  fbRef.update(updates);
+  }
 
 export default class DoGoodForm extends React.Component {
+
+  getValues() {
+    let doGood = {
+      name: document.getElementById('name').value,
+      amount: Number(document.getElementById('amount').value),
+      donateTo: document.getElementById('donateTo').value,
+      gaveUp: document.getElementById('gaveUp').value
+    }
+    console.log(doGood);
+    addDoGood(doGood);
+  }
+
   render () {
     return (
       <form>
         <div>
           <label htmlFor="name">Name:
-            <input type="text" id="name" />
+            <input type="text" id="name" placeholder="Joe" />
           </label>
         </div>
         <div>
-          <label htmlFor="amount">Amount Donated:
-            <input type="text" id="amount" />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="donateTo">Donated to:
-            <input type="text" id="donatedTo" />
+          <label htmlFor="amount">Amount Donated: $
+            <input type="text" id="amount" placeholder="5" />
           </label>
         </div>
         <div>
           <label htmlFor="gaveUp">What did you give up to donate?
-            <textarea type="text" id="gaveUp" />
+            <input type="text" id="gaveUp" placeholder="coffee" />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="donateTo">Donated to:
+            <input type="text" id="donateTo" placeholder="Food Bank"/>
           </label>
         </div>
         <div>
@@ -32,7 +55,7 @@ export default class DoGoodForm extends React.Component {
             <input type="checkbox" id="twitter" /> Twitter
           </label>
         </div>
-        <button type="submit">Submit</button>
+        <button onClick={this.getValues.bind(this)} type="submit">Submit</button>
       </form>
     )
   }
