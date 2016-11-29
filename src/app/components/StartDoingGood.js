@@ -7,7 +7,7 @@ export default class StartDoingGood extends React.Component {
     return (
       <div>
         <h2>Click Below to Start Doing Good Now</h2>
-        <button>Do Good</button>
+        <button><a href="#doGood">Do Good</a></button>
       </div>
     )
   }
