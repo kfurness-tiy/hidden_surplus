@@ -3,10 +3,10 @@
 import React from 'react';
 
 import DoGoodForm from './DoGoodForm';
-import Login from './Login'
-import Register from './Register'
+import Login from './authentication/Login'
+import Register from './authentication/Register'
 
-import { firebaseAuth } from './constants'
+import { firebaseAuth } from './authentication/constants'
 
 export default class DoGood extends React.Component {
   constructor(props){
@@ -35,8 +35,8 @@ export default class DoGood extends React.Component {
     return (
       <div>
         <div>
-          <Login />
           <Register />
+          <Login />
         </div>
         <div className="form">
           <h2>Do Good</h2>

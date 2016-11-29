@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { fbRef, fbDoGood } from './constants.js';
+import { fbRef, fbDoGood } from './authentication/constants.js';
 
 function addDoGood (obj) {
   console.log("obj",obj);

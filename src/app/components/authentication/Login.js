@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { login } from './auth.js';
+import { login } from './auth';
 
 export default class Login extends React.Component {
   handleSubmit (e) {

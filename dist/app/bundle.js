@@ -22030,35 +22030,19 @@
 	
 	var _Contributions2 = _interopRequireDefault(_Contributions);
 	
-<<<<<<< HEAD
-	var _DoGood = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./DoGood\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	
-	var _DoGood2 = _interopRequireDefault(_DoGood);
-	
-	var _Jumbotron = __webpack_require__(/*! ./Jumbotron */ 236);
-	
-	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
-	
-	var _Main = __webpack_require__(/*! ./Main */ 242);
-	
-	var _Main2 = _interopRequireDefault(_Main);
-	
-	var _Nav = __webpack_require__(/*! ./Nav */ 247);
-=======
 	var _DoGood = __webpack_require__(/*! ./DoGood */ 242);
 	
 	var _DoGood2 = _interopRequireDefault(_DoGood);
 	
-	var _Jumbotron = __webpack_require__(/*! ./Jumbotron */ 244);
+	var _Jumbotron = __webpack_require__(/*! ./Jumbotron */ 247);
 	
 	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
 	
-	var _Main = __webpack_require__(/*! ./Main */ 250);
+	var _Main = __webpack_require__(/*! ./Main */ 253);
 	
 	var _Main2 = _interopRequireDefault(_Main);
 	
-	var _Nav = __webpack_require__(/*! ./Nav */ 255);
->>>>>>> form
+	var _Nav = __webpack_require__(/*! ./Nav */ 258);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
@@ -27188,15 +27172,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-<<<<<<< HEAD
-=======
-	var _ContTotals = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./ContTotals\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	
-	var _ContTotals2 = _interopRequireDefault(_ContTotals);
-	
 	var _constants = __webpack_require__(/*! ./constants */ 235);
 	
->>>>>>> form
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27205,20 +27182,6 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-<<<<<<< HEAD
-	var Contributions = function (_React$Component) {
-	  _inherits(Contributions, _React$Component);
-	
-	  function Contributions() {
-	    _classCallCheck(this, Contributions);
-	
-	    return _possibleConstructorReturn(this, (Contributions.__proto__ || Object.getPrototypeOf(Contributions)).apply(this, arguments));
-	  }
-	
-	  _createClass(Contributions, [{
-	    key: 'render',
-	    value: function render() {
-=======
 	var doGood = [];
 	
 	function updateToDo(val, id) {
@@ -27259,7 +27222,6 @@
 	        total += c.amount;
 	        return total;
 	      });
->>>>>>> form
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -27272,8 +27234,6 @@
 	          'p',
 	          null,
 	          'Small acts can make a big difference. Just look at all the good being done by people donating their hidden surplus. Way to make the world a better place!'
-<<<<<<< HEAD
-=======
 	        ),
 	        _react2.default.createElement(
 	          'h3',
@@ -27283,8 +27243,8 @@
 	        _react2.default.createElement(
 	          'h1',
 	          null,
+	          '$',
 	          total
->>>>>>> form
 	        )
 	      );
 	    }
@@ -27296,10 +27256,6 @@
 	exports.default = Contributions;
 
 /***/ },
-<<<<<<< HEAD
-/* 235 */,
-/* 236 */
-=======
 /* 235 */
 /*!*****************************************!*\
   !*** ./src/app/components/constants.js ***!
@@ -28016,6 +27972,16 @@
 	
 	var _DoGoodForm2 = _interopRequireDefault(_DoGoodForm);
 	
+	var _Login = __webpack_require__(/*! ./Login */ 244);
+	
+	var _Login2 = _interopRequireDefault(_Login);
+	
+	var _Register = __webpack_require__(/*! ./Register */ 246);
+	
+	var _Register2 = _interopRequireDefault(_Register);
+	
+	var _constants = __webpack_require__(/*! ./constants */ 235);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28027,24 +27993,58 @@
 	var DoGood = function (_React$Component) {
 	  _inherits(DoGood, _React$Component);
 	
-	  function DoGood() {
+	  function DoGood(props) {
 	    _classCallCheck(this, DoGood);
 	
-	    return _possibleConstructorReturn(this, (DoGood.__proto__ || Object.getPrototypeOf(DoGood)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (DoGood.__proto__ || Object.getPrototypeOf(DoGood)).call(this, props));
+	
+	    _this.state = {
+	      authed: false,
+	      loading: true
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(DoGood, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+	
+	      this.removeListener = (0, _constants.firebaseAuth)().onAuthStateChanged(function (user) {
+	        if (user) {
+	          _this2.setState({
+	            authed: true,
+	            loading: false
+	          });
+	        } else {
+	          _this2.setState({
+	            loading: false
+	          });
+	        }
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h2',
+	          'div',
 	          null,
-	          'Do Good'
+	          _react2.default.createElement(_Login2.default, null),
+	          _react2.default.createElement(_Register2.default, null)
 	        ),
-	        _react2.default.createElement(_DoGoodForm2.default, null)
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'form' },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Do Good'
+	          ),
+	          _react2.default.createElement(_DoGoodForm2.default, null)
+	        )
 	      );
 	    }
 	  }]);
@@ -28190,7 +28190,249 @@
 
 /***/ },
 /* 244 */
->>>>>>> form
+/*!*************************************!*\
+  !*** ./src/app/components/Login.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _auth = __webpack_require__(/*! ./auth.js */ 245);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Login = function (_React$Component) {
+	  _inherits(Login, _React$Component);
+	
+	  function Login() {
+	    _classCallCheck(this, Login);
+	
+	    return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
+	  }
+	
+	  _createClass(Login, [{
+	    key: 'handleSubmit',
+	    value: function handleSubmit(e) {
+	      e.preventDefault();
+	      (0, _auth.login)(this.email.value, this.pw.value);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          ' Login '
+	        ),
+	        _react2.default.createElement(
+	          'form',
+	          { onSubmit: this.handleSubmit },
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              'Email'
+	            ),
+	            _react2.default.createElement('input', { ref: function ref(email) {
+	                return _this2.email = email;
+	              }, placeholder: 'Email' })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              'Password'
+	            ),
+	            _react2.default.createElement('input', { type: 'password',
+	              placeholder: 'Password', ref: function ref(pw) {
+	                return _this2.pw = pw;
+	              } })
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'submit' },
+	            'Login'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Login;
+	}(_react2.default.Component);
+	
+	exports.default = Login;
+
+/***/ },
+/* 245 */
+/*!************************************!*\
+  !*** ./src/app/components/auth.js ***!
+  \************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.auth = auth;
+	exports.logout = logout;
+	exports.login = login;
+	exports.saveUser = saveUser;
+	
+	var _constants = __webpack_require__(/*! ./constants */ 235);
+	
+	function auth(email, pw) {
+	  return (0, _constants.firebaseAuth)().createUserWithEmailAndPassword(email, pw).then(saveUser).catch(function (error) {
+	    return console.log('Oops', error);
+	  });
+	}
+	
+	function logout() {
+	  return (0, _constants.firebaseAuth)().signOut();
+	}
+	
+	function login(email, pw) {
+	  return (0, _constants.firebaseAuth)().signInWithEmailAndPassword(email, pw);
+	}
+	
+	function saveUser(user) {
+	  return _constants.ref.child('users/' + user.uid + '/info').set({
+	    email: user.email,
+	    uid: user.uid
+	  }).then(function () {
+	    return user;
+	  });
+	}
+	
+	// Authentication setup credit goes to Tyler McGinnis https://github.com/tylermcginnis/react-router-firebase-auth
+
+/***/ },
+/* 246 */
+/*!****************************************!*\
+  !*** ./src/app/components/Register.js ***!
+  \****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _auth = __webpack_require__(/*! ./auth */ 245);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Register = function (_React$Component) {
+	  _inherits(Register, _React$Component);
+	
+	  function Register() {
+	    _classCallCheck(this, Register);
+	
+	    return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
+	  }
+	
+	  _createClass(Register, [{
+	    key: 'handleSubmit',
+	    value: function handleSubmit(e) {
+	      e.preventDefault();
+	      (0, _auth.auth)(this.email.value, this.pw.value);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'h2',
+	          null,
+	          'Register'
+	        ),
+	        _react2.default.createElement(
+	          'form',
+	          { onSubmit: this.handleSubmit },
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              'Email'
+	            ),
+	            _react2.default.createElement('input', { ref: function ref(email) {
+	                return _this2.email = email;
+	              }, placeholder: 'Email' })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              'Password'
+	            ),
+	            _react2.default.createElement('input', { type: 'password', placeholder: 'Password', ref: function ref(pw) {
+	                return _this2.pw = pw;
+	              } })
+	          ),
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'submit' },
+	            'Register'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Register;
+	}(_react2.default.Component);
+	
+	exports.default = Register;
+
+/***/ },
+/* 247 */
 /*!*****************************************!*\
   !*** ./src/app/components/Jumbotron.js ***!
   \*****************************************/
@@ -28208,11 +28450,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-<<<<<<< HEAD
-	var _Jumbotron = __webpack_require__(/*! ./_Jumbotron.sass */ 237);
-=======
-	var _Jumbotron = __webpack_require__(/*! ./_Jumbotron.sass */ 245);
->>>>>>> form
+	var _Jumbotron = __webpack_require__(/*! ./_Jumbotron.sass */ 248);
 	
 	var _Jumbotron2 = _interopRequireDefault(_Jumbotron);
 	
@@ -28254,11 +28492,7 @@
 	exports.default = Jumbotron;
 
 /***/ },
-<<<<<<< HEAD
-/* 237 */
-=======
-/* 245 */
->>>>>>> form
+/* 248 */
 /*!********************************************!*\
   !*** ./src/app/components/_Jumbotron.sass ***!
   \********************************************/
@@ -28267,17 +28501,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-<<<<<<< HEAD
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./_Jumbotron.sass */ 238);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./_Jumbotron.sass */ 249);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 241)(content, {});
-=======
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./_Jumbotron.sass */ 246);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 249)(content, {});
->>>>>>> form
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 252)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -28294,40 +28521,24 @@
 	}
 
 /***/ },
-<<<<<<< HEAD
-/* 238 */
-=======
-/* 246 */
->>>>>>> form
+/* 249 */
 /*!***************************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/_Jumbotron.sass ***!
   \***************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 239)();
-=======
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 247)();
->>>>>>> form
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 250)();
 	// imports
 	
 	
 	// module
-<<<<<<< HEAD
-	exports.push([module.id, ".jumbo {\n  background-image: url(" + __webpack_require__(/*! ../img/jumbotron_placeholder.png */ 240) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  height: 500px; }\n  .jumbo h2 {\n    color: white; }\n", ""]);
-=======
-	exports.push([module.id, ".jumbo {\n  background-image: url(" + __webpack_require__(/*! ../img/jumbotron_placeholder.png */ 248) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  height: 500px; }\n  .jumbo h2 {\n    color: white; }\n", ""]);
->>>>>>> form
+	exports.push([module.id, ".jumbo {\n  background-image: url(" + __webpack_require__(/*! ../img/jumbotron_placeholder.png */ 251) + ");\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n  height: 500px; }\n  .jumbo h2 {\n    color: white; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-<<<<<<< HEAD
-/* 239 */
-=======
-/* 247 */
->>>>>>> form
+/* 250 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -28386,11 +28597,7 @@
 
 
 /***/ },
-<<<<<<< HEAD
-/* 240 */
-=======
-/* 248 */
->>>>>>> form
+/* 251 */
 /*!***********************************************!*\
   !*** ./src/app/img/jumbotron_placeholder.png ***!
   \***********************************************/
@@ -28399,11 +28606,7 @@
 	module.exports = __webpack_require__.p + "src/app/img/jumbotron_placeholder.png?d0394fa18b";
 
 /***/ },
-<<<<<<< HEAD
-/* 241 */
-=======
-/* 249 */
->>>>>>> form
+/* 252 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -28658,11 +28861,7 @@
 
 
 /***/ },
-<<<<<<< HEAD
-/* 242 */
-=======
-/* 250 */
->>>>>>> form
+/* 253 */
 /*!************************************!*\
   !*** ./src/app/components/Main.js ***!
   \************************************/
@@ -28680,27 +28879,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-<<<<<<< HEAD
-	var _About = __webpack_require__(/*! ./About */ 243);
+	var _About = __webpack_require__(/*! ./About */ 254);
 	
 	var _About2 = _interopRequireDefault(_About);
 	
-	var _StartDoingGood = __webpack_require__(/*! ./StartDoingGood */ 245);
+	var _StartDoingGood = __webpack_require__(/*! ./StartDoingGood */ 256);
 	
 	var _StartDoingGood2 = _interopRequireDefault(_StartDoingGood);
 	
-	var _WhereToGive = __webpack_require__(/*! ./WhereToGive */ 246);
-=======
-	var _About = __webpack_require__(/*! ./About */ 251);
-	
-	var _About2 = _interopRequireDefault(_About);
-	
-	var _StartDoingGood = __webpack_require__(/*! ./StartDoingGood */ 253);
-	
-	var _StartDoingGood2 = _interopRequireDefault(_StartDoingGood);
-	
-	var _WhereToGive = __webpack_require__(/*! ./WhereToGive */ 254);
->>>>>>> form
+	var _WhereToGive = __webpack_require__(/*! ./WhereToGive */ 257);
 	
 	var _WhereToGive2 = _interopRequireDefault(_WhereToGive);
 	
@@ -28740,11 +28927,7 @@
 	exports.default = Main;
 
 /***/ },
-<<<<<<< HEAD
-/* 243 */
-=======
-/* 251 */
->>>>>>> form
+/* 254 */
 /*!*************************************!*\
   !*** ./src/app/components/About.js ***!
   \*************************************/
@@ -28762,11 +28945,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-<<<<<<< HEAD
-	var _WhatToGive = __webpack_require__(/*! ./WhatToGive */ 244);
-=======
-	var _WhatToGive = __webpack_require__(/*! ./WhatToGive */ 252);
->>>>>>> form
+	var _WhatToGive = __webpack_require__(/*! ./WhatToGive */ 255);
 	
 	var _WhatToGive2 = _interopRequireDefault(_WhatToGive);
 	
@@ -28814,11 +28993,7 @@
 	exports.default = About;
 
 /***/ },
-<<<<<<< HEAD
-/* 244 */
-=======
-/* 252 */
->>>>>>> form
+/* 255 */
 /*!******************************************!*\
   !*** ./src/app/components/WhatToGive.js ***!
   \******************************************/
@@ -28874,11 +29049,7 @@
 	exports.default = WhatToGive;
 
 /***/ },
-<<<<<<< HEAD
-/* 245 */
-=======
-/* 253 */
->>>>>>> form
+/* 256 */
 /*!**********************************************!*\
   !*** ./src/app/components/StartDoingGood.js ***!
   \**********************************************/
@@ -28939,11 +29110,7 @@
 	exports.default = StartDoingGood;
 
 /***/ },
-<<<<<<< HEAD
-/* 246 */
-=======
-/* 254 */
->>>>>>> form
+/* 257 */
 /*!*******************************************!*\
   !*** ./src/app/components/WhereToGive.js ***!
   \*******************************************/
@@ -29004,11 +29171,7 @@
 	exports.default = WhereToGive;
 
 /***/ },
-<<<<<<< HEAD
-/* 247 */
-=======
-/* 255 */
->>>>>>> form
+/* 258 */
 /*!***********************************!*\
   !*** ./src/app/components/Nav.js ***!
   \***********************************/

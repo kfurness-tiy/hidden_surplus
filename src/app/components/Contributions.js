@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { fbRef, fbDoGood } from './constants';
+import { fbRef, fbDoGood } from './authentication/constants';
 
 let doGood = [];
 

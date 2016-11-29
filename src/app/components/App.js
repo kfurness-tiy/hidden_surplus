@@ -8,12 +8,15 @@ import DoGood from './DoGood';
 import Jumbotron from './Jumbotron';
 import Main from './Main';
 import Nav from './Nav';
+import Foo from './authentication/foobar';
+// import Auth from './authentication/index'
 
 export default class App extends React.Component {
 
   render () {
     return (
         <div>
+          <Foo />
           <Nav />
           <Jumbotron />
           <Main />
