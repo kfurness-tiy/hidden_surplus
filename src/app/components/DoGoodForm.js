@@ -45,6 +45,15 @@ export default class DoGoodForm extends React.Component {
           </label>
         </div>
         <div>
+          <label htmlFor="gaveUpCategory">What category does what you gave up fall into?
+            <select name="select">
+              <option value="value1">Food/Beverage</option>
+              <option value="value2" selected>Value 2</option>
+              <option value="value3">Value 3</option>
+            </select>
+          </label>
+        </div>
+        <div>
           <label htmlFor="donateTo">Donated to:
             <input type="text" id="donateTo" placeholder="Food Bank"/>
           </label>
