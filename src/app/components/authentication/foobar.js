@@ -31,10 +31,10 @@ function MatchWhenUnauthed ({component: Component, authed, ...rest}) {
 
 
 export default class Foo extends Component {
-    state = {
-      authed: false,
-      loading: true,
-    }
+state = {
+    authed: false,
+    loading: true,
+  }
 
 
   componentDidMount () {
