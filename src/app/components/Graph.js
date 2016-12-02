@@ -12,12 +12,15 @@ export default class Graph extends React.Component {
         height = 400,
         radius = 32;
 
-    var circles = d3.range(20).map(function() {
-      return {
-        x: Math.round(Math.random() * (width - radius * 2) + radius),
-        y: Math.round(Math.random() * (height - radius * 2) + radius)
-      };
-    });
+    var circles = d3.range(20);
+
+    function cx (d) {
+      return d.x
+    }
+
+    function cy (d) {
+      return d.y
+    }
 
     var color = d3.scaleOrdinal()
         .range(d3.schemeCategory20);
@@ -26,11 +29,11 @@ export default class Graph extends React.Component {
     return (
       <svg width={width} height={height}>
         {circles.map((d,i) =>
-            <circle key={i} fill={color(i)} />
+            <circle key={i} fill={color(i)} cx={Math.round(Math.random() * (width - radius * 2) + radius)} cy={Math.round(Math.random() * (height - radius * 2) + radius)} r={radius} />
           )
-        })
+        }
       </svg>
-    )
+    );
   }
 }
 
