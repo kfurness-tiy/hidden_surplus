@@ -14,14 +14,6 @@ export default class Graph extends React.Component {
 
     var circles = d3.range(20);
 
-    function cx (d) {
-      return d.x
-    }
-
-    function cy (d) {
-      return d.y
-    }
-
     var color = d3.scaleOrdinal()
         .range(d3.schemeCategory20);
 
@@ -36,6 +28,3 @@ export default class Graph extends React.Component {
     );
   }
 }
-
-
-// <circle d={circles} cx={function(d) { return d.x; }} cy={function(d) { return d.y; }} r="20"></circle>
