@@ -4,6 +4,9 @@ import React from 'react';
 
 import { fbRef, fbDoGood } from './constants';
 
+import Graph from './Graph.js'
+
+
 let doGood = [];
 
 function updateToDo (val, id) {
@@ -36,6 +39,7 @@ export default class Contributions extends React.Component {
     return (
       <div>
         <h2>Collective Contributions</h2>
+        <Graph />
         <p>Small acts can make a big difference. Just look at all the good being done by people donating their hidden surplus. Way to make the world a better place!</p>
         <h3>Total</h3>
         <h1>${total}</h1>
