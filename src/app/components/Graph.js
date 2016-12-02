@@ -7,10 +7,10 @@ import * as d3 from 'd3';
 export default class Graph extends React.Component {
 
   render() {
-    var svg = d3.select("svg"),
-    width = 960,
-    height = 400,
-    radius = 32;
+
+    let width = 960,
+        height = 400,
+        radius = 32;
 
     var circles = d3.range(20).map(function() {
       return {
@@ -22,10 +22,17 @@ export default class Graph extends React.Component {
     var color = d3.scaleOrdinal()
         .range(d3.schemeCategory20);
 
+        console.log(circles);
     return (
-      <svg width="960" height="400">
-
+      <svg width={width} height={height}>
+        {circles.map((d,i) =>
+            <circle key={i} fill={color(i)} />
+          )
+        })
       </svg>
     )
   }
 }
+
+
+// <circle d={circles} cx={function(d) { return d.x; }} cy={function(d) { return d.y; }} r="20"></circle>
