@@ -7,17 +7,21 @@ import * as d3 from 'd3';
 export default class Graph extends React.Component {
 
   render() {
+    let data = this.props.data;
 
     let width = 960,
         height = 400,
         radius = 32;
 
-    var circles = d3.range(20);
+    var circles = d3.range(data.length);
 
     var color = d3.scaleOrdinal()
         .range(d3.schemeCategory20);
 
         console.log(circles);
+        console.log("test", data);
+    
+
     return (
       <svg width={width} height={height}>
         {circles.map((d,i) =>

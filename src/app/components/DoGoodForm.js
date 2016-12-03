@@ -17,10 +17,10 @@ export default class DoGoodForm extends React.Component {
 
   getValues() {
     let doGood = {
-      name: document.getElementById('name').value,
-      amount: Number(document.getElementById('amount').value),
-      donateTo: document.getElementById('donateTo').value,
-      gaveUp: document.getElementById('gaveUp').value
+      name: document.getElementById('name').defaultValue,
+      amount: Number(document.getElementById('amount').defaultValue),
+      donateTo: document.getElementById('donateTo').defaultValue,
+      gaveUp: document.getElementById('gaveUp').defaultValue
     }
     console.log(doGood);
     addDoGood(doGood);
