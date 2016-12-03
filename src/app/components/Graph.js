@@ -20,15 +20,19 @@ export default class Graph extends React.Component {
 
         console.log(circles);
         console.log("test", data);
-    
+
+    var test = () => { return ( <h1>pizza</h1> ) ;};
 
     return (
+      <div>
+        {test}
       <svg width={width} height={height}>
         {circles.map((d,i) =>
             <circle key={i} fill={color(i)} cx={Math.round(Math.random() * (width - radius * 2) + radius)} cy={Math.round(Math.random() * (height - radius * 2) + radius)} r={radius} />
-          )
-        }
+
+          )}
       </svg>
+    </div>
     );
   }
 }
